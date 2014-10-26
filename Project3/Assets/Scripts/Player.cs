@@ -19,15 +19,23 @@ public class Player : MonoBehaviour {
 		curLoc = transform.position;
 		
 		if(Input.GetKey(KeyCode.A))
+		{
 			curLoc.x -= moveSpeed * Time.fixedDeltaTime;
+		}
 		if(Input.GetKey(KeyCode.D))
+		{
 			curLoc.x += moveSpeed * Time.fixedDeltaTime;
+		}
 		if(Input.GetKey(KeyCode.W))
+		{
 			curLoc.z += moveSpeed * Time.fixedDeltaTime;
+		}
 		if(Input.GetKey(KeyCode.S))
+		{
 			curLoc.z -= moveSpeed * Time.fixedDeltaTime;
-		if(Input.GetKey(KeyCode.Space))
-			curLoc.y += 2* moveSpeed * Time.fixedDeltaTime;
+		}
+		//if(Input.GetKey(KeyCode.Space))
+			//curLoc.y += 2* moveSpeed * Time.fixedDeltaTime;
 		transform.position = curLoc;
 		
 	}
