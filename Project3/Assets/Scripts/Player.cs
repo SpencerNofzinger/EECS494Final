@@ -17,26 +17,27 @@ public class Player : MonoBehaviour {
 	
 	private void InputListen() {
 		curLoc = transform.position;
-		
+
+		Vector3 velocity = Vector3.zero;
 		if(Input.GetKey(KeyCode.A))
 		{
-			curLoc.x -= moveSpeed * Time.fixedDeltaTime;
+			velocity.x = -moveSpeed;
 		}
 		if(Input.GetKey(KeyCode.D))
 		{
-			curLoc.x += moveSpeed * Time.fixedDeltaTime;
+			velocity.x = moveSpeed;
 		}
 		if(Input.GetKey(KeyCode.W))
 		{
-			curLoc.z += moveSpeed * Time.fixedDeltaTime;
+			velocity.z = moveSpeed;
 		}
 		if(Input.GetKey(KeyCode.S))
 		{
-			curLoc.z -= moveSpeed * Time.fixedDeltaTime;
+			velocity.z = -moveSpeed;
 		}
 		//if(Input.GetKey(KeyCode.Space))
 			//curLoc.y += 2* moveSpeed * Time.fixedDeltaTime;
-		transform.position = curLoc;
+		transform.rigidbody.velocity = velocity;
 		
 	}
 
