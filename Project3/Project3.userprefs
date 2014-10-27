@@ -7,11 +7,20 @@
 =======
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
     <Files>
+<<<<<<< HEAD
+      <File FileName="Assets\BridgeSwitch.cs" Line="23" Column="100" />
+      <File FileName="Assets\Bridge.cs" Line="1" Column="1" />
+      <File FileName="Assets\Bridge_Patrick.cs" Line="44" Column="6" />
+      <File FileName="Assets\BridgeSwitch_Patrick.cs" Line="1" Column="1" />
+      <File FileName="Assets\BridgeSwitch_Patrick_Shift.cs" Line="17" Column="3" />
+      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
+=======
       <File FileName="Assets\Scripts\Player.cs" Line="15" Column="14" />
       <File FileName="Assets\Bridge.cs" Line="18" Column="4" />
       <File FileName="Assets\Scripts\Door.cs" Line="18" Column="29" />
       <File FileName="Assets\BridgeSwitch.cs" Line="19" Column="4" />
       <File FileName="Assets\Scripts\Switch.cs" Line="26" Column="3" />
+>>>>>>> origin/master
 >>>>>>> origin/master
     </Files>
   </MonoDevelop.Ide.Workbench>
