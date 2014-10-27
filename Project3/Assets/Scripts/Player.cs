@@ -6,12 +6,13 @@ public class Player : MonoBehaviour {
 	private Vector3 curLoc;
 	private GameObject prevLoc;
 	public float moveSpeed = 2;
+	public float rotateSpeed;
 	private bool set;
 	public GameObject marker;
 
 	void Update () 
 	{
-		InputListen 	();
+		InputListen();
 		Poof ();
 	}
 	
@@ -19,8 +20,14 @@ public class Player : MonoBehaviour {
 		curLoc = transform.position;
 
 		Vector3 velocity = Vector3.zero;
+		velocity.y = rigidbody.velocity.y;
 		if(Input.GetKey(KeyCode.A))
 		{
+			/*
+			Quaternion q = transform.rotation;
+			q.y -= rotateSpeed * Time.deltaTime;
+			transform.rotation = Vector3.zero;
+			*/
 			velocity.x = -moveSpeed;
 		}
 		if(Input.GetKey(KeyCode.D))
@@ -34,6 +41,10 @@ public class Player : MonoBehaviour {
 		if(Input.GetKey(KeyCode.S))
 		{
 			velocity.z = -moveSpeed;
+		}
+		if(Input.GetKey (KeyCode.Escape))
+		{
+			Application.LoadLevel (Application.loadedLevel);
 		}
 		//if(Input.GetKey(KeyCode.Space))
 			//curLoc.y += 2* moveSpeed * Time.fixedDeltaTime;
