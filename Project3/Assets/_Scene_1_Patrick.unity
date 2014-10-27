@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85c95db84549674e93be0ef2cc29aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: _Scene_0_Alex
+  nextLevel: _Scene_0
 --- !u!23 &303301026
 Renderer:
   m_ObjectHideFlags: 0
