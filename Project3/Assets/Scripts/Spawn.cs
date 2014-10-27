@@ -6,7 +6,7 @@ public class Spawn : MonoBehaviour {
 	float spawnTime;
 
 	void Start () {
-		spawnTime = 0.0f;
+		spawnTime = 3.0f;
 	}
 
 	// Update is called once per frame
