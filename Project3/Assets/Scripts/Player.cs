@@ -56,11 +56,15 @@ public class Player : MonoBehaviour {
 		if(Input.GetKeyUp(KeyCode.J)) {
 			if(set) {
 				Destroy(prevLoc);
+			}
+			prevLoc = Instantiate(marker, curLoc, Quaternion.identity) as GameObject;
+			set = true;
+		}
+		if(Input.GetKeyUp(KeyCode.K)) {
+			if(set) {
+				Destroy(prevLoc);
 				transform.position = prevLoc.transform.position;
 				set = false;
-			} else {
-				prevLoc = Instantiate(marker, curLoc, Quaternion.identity) as GameObject;
-				set = true;
 			}
 		}
 	}
