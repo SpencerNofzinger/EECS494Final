@@ -15,10 +15,37 @@ public class Player : MonoBehaviour {
 	private bool isRotating;	// Is the camera being rotated?
 	private float turnSpeed = 4.0f;
 
+	// Camera transition variables
+	private bool isTeleporting;
+	private Vector3 teleportStartPosition;
+	private Vector3 teleportEndPosition;
+	private float warpTime = 0.0f;
+	private float maxWarpTime = 1.0f;
+
+	private bool inputEnabled = true;
+
 	void Update () 
 	{
-		InputListen();
-		Poof ();
+		if (inputEnabled) {
+						InputListen ();
+						Poof ();
+				}
+
+		if (isTeleporting) {
+			renderer.enabled = false;
+			collider.enabled = false;
+			inputEnabled = false;
+			transform.position = Vector3.Lerp (teleportStartPosition, teleportEndPosition, warpTime / maxWarpTime);
+			warpTime += Time.deltaTime;
+			if (warpTime >= maxWarpTime){
+				isTeleporting = false;
+				inputEnabled = true;
+				renderer.enabled = true;
+				collider.enabled = true;
+				warpTime = 0;
+			}
+				
+		}
 	}
 	
 	private void InputListen() {
@@ -68,6 +95,7 @@ public class Player : MonoBehaviour {
 
 		// end camera stuff
 
+
 		//if(Input.GetKey(KeyCode.Space))
 			//curLoc.y += 2* moveSpeed * Time.fixedDeltaTime;
 		transform.rigidbody.velocity = velocity;
@@ -84,9 +112,13 @@ public class Player : MonoBehaviour {
 		}
 		if(Input.GetKeyUp(KeyCode.K)) {
 			if(set) {
-				Destroy(prevLoc);
-				transform.position = prevLoc.transform.position;
+
+				//transform.position = prevLoc.transform.position;
 				set = false;
+				isTeleporting = true;
+				teleportStartPosition = transform.position;
+				teleportEndPosition = GameObject.FindGameObjectWithTag("Marker").transform.position;
+				Destroy(prevLoc);
 			}
 		}
 	}
