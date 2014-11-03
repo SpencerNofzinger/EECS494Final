@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
 	private Vector3 teleportStartPosition;
 	private Vector3 teleportEndPosition;
 	private float warpTime = 0.0f;
-	private float maxWarpTime = 1.0f;
+	private float maxWarpTime = 0.8f;
 
 	private bool inputEnabled = true;
 
@@ -35,14 +35,18 @@ public class Player : MonoBehaviour {
 			renderer.enabled = false;
 			collider.enabled = false;
 			inputEnabled = false;
-			transform.position = Vector3.Lerp (teleportStartPosition, teleportEndPosition, warpTime / maxWarpTime);
+			transform.position = Vector3.Lerp (transform.position, teleportEndPosition, warpTime / maxWarpTime);
 			warpTime += Time.deltaTime;
 			if (warpTime >= maxWarpTime){
 				isTeleporting = false;
 				inputEnabled = true;
+				transform.position = teleportEndPosition;
+				rigidbody.velocity = Vector3.zero;
+			
 				renderer.enabled = true;
 				collider.enabled = true;
 				warpTime = 0;
+
 			}
 				
 		}
@@ -88,8 +92,8 @@ public class Player : MonoBehaviour {
 		{
 			Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
 			
-			//transform.RotateAround(player.transform.position, transform.right, -pos.y * turnSpeed);
-			transform.RotateAround(transform.position, Vector3.up, pos.x * turnSpeed);
+			//transform.RotateAround(transform.position, transform.right, -pos.y * turnSpeed);
+			transform.RotateAround(transform.position, Vector3.up, -pos.x * turnSpeed);
 
 		}
 
