@@ -10,6 +10,11 @@ public class Player : MonoBehaviour {
 	private bool set;
 	public GameObject marker;
 
+	// Camera variables
+	private Vector3 mouseOrigin;	// Position of cursor when mouse dragging starts
+	private bool isRotating;	// Is the camera being rotated?
+	private float turnSpeed = 4.0f;
+
 	void Update () 
 	{
 		InputListen();
@@ -23,29 +28,46 @@ public class Player : MonoBehaviour {
 		velocity.y = rigidbody.velocity.y;
 		if(Input.GetKey(KeyCode.A))
 		{
-			/*
-			Quaternion q = transform.rotation;
-			q.y -= rotateSpeed * Time.deltaTime;
-			transform.rotation = Vector3.zero;
-			*/
-			velocity.x = -moveSpeed;
+			velocity += Vector3.Cross (transform.forward, Vector3.up) * moveSpeed;
 		}
 		if(Input.GetKey(KeyCode.D))
 		{
-			velocity.x = moveSpeed;
+			velocity += Vector3.Cross (transform.forward, Vector3.up) * -moveSpeed;
 		}
 		if(Input.GetKey(KeyCode.W))
 		{
-			velocity.z = moveSpeed;
+			velocity += transform.forward * moveSpeed;
 		}
 		if(Input.GetKey(KeyCode.S))
 		{
-			velocity.z = -moveSpeed;
+			velocity += transform.forward * -moveSpeed;
 		}
 		if(Input.GetKey (KeyCode.Escape))
 		{
 			Application.LoadLevel (Application.loadedLevel);
 		}
+
+		// Camera stuff
+
+		if(Input.GetMouseButtonDown(0))
+		{
+			// Get mouse origin
+			mouseOrigin = Input.mousePosition;
+			isRotating = true;
+		}
+		if (!Input.GetMouseButton(0)) isRotating=false;
+
+		if (isRotating)
+		{
+			Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
+			
+			//transform.RotateAround(player.transform.position, transform.right, -pos.y * turnSpeed);
+			transform.RotateAround(transform.position, Vector3.up, pos.x * turnSpeed);
+
+		}
+
+		// end camera stuff
+
 		//if(Input.GetKey(KeyCode.Space))
 			//curLoc.y += 2* moveSpeed * Time.fixedDeltaTime;
 		transform.rigidbody.velocity = velocity;
