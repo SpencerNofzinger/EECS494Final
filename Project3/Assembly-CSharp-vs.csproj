@@ -46,13 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FallingBridge.cs" />
      <Compile Include="Assets\Scripts\Bridge.cs" />
      <Compile Include="Assets\Scripts\BridgeSwitch.cs" />
      <Compile Include="Assets\Scripts\BridgeSwitch_Patrick.cs" />
      <Compile Include="Assets\Scripts\BridgeSwitch_Patrick_Shift.cs" />
      <Compile Include="Assets\Scripts\Bridge_Patrick.cs" />
      <Compile Include="Assets\Scripts\Door.cs" />
+     <Compile Include="Assets\Scripts\FallingBridge.cs" />
+     <Compile Include="Assets\Scripts\LoopingMovingPlatform.cs" />
+     <Compile Include="Assets\Scripts\Marker.cs" />
      <Compile Include="Assets\Scripts\Move.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Spawn.cs" />

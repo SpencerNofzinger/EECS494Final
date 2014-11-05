@@ -127,4 +127,15 @@ public class Player : MonoBehaviour {
 			}
 		}
 	}
+
+	void OnCollisionStay (Collision hit) { 
+		if(hit.gameObject.CompareTag ("MovingPlatform"))
+		{
+			transform.parent = hit.transform ; 
+		}
+		else
+		{
+			transform.parent = null;
+		}
+	}
 }
