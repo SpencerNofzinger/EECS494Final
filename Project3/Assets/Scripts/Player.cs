@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
 	public float rotateSpeed;
 	private bool set;
 	public GameObject marker;
+	public GameObject teleportArriveEffect;
 
 	// Camera variables
 	private Vector3 mouseOrigin;	// Position of cursor when mouse dragging starts
