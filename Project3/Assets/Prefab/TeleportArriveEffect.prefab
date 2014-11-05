@@ -41,14 +41,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4eed6666c91a4c4d94ada1b538f6500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aliveTime: 10
+  aliveTime: 5
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  lengthInSec: .5
+  lengthInSec: .25
   startDelay: 0
   speed: 1
   randomSeed: 0

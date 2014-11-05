@@ -43,7 +43,7 @@ public class Player : MonoBehaviour {
 				inputEnabled = true;
 				transform.position = teleportEndPosition;
 				rigidbody.velocity = Vector3.zero;
-			
+				Instantiate (teleportArriveEffect, transform.position, Quaternion.identity);
 				renderer.enabled = true;
 				collider.enabled = true;
 				warpTime = 0;
