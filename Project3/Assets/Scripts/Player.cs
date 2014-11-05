@@ -37,7 +37,7 @@ public class Player : MonoBehaviour {
 			inputEnabled = false;
 			transform.position = Vector3.Lerp (transform.position, teleportEndPosition, warpTime / maxWarpTime);
 			warpTime += Time.deltaTime;
-			if (warpTime >= maxWarpTime){
+			if (Vector3.Distance (transform.position, teleportEndPosition) < .5f){
 				isTeleporting = false;
 				inputEnabled = true;
 				transform.position = teleportEndPosition;
