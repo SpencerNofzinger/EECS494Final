@@ -43,18 +43,19 @@ public class Player : MonoBehaviour {
 			renderer.enabled = false;
 			collider.enabled = false;
 			inputEnabled = false;
-			transform.position = Vector3.Lerp (transform.position, teleportEndPosition, warpTime / maxWarpTime);
+			transform.position = Vector3.Lerp (transform.position, prevLoc.transform.position, warpTime / maxWarpTime);
 			warpTime += Time.deltaTime;
-			if (Vector3.Distance (transform.position, teleportEndPosition) < .5f){
+			if (Vector3.Distance (transform.position, prevLoc.transform.position) < .5f){
 				isTeleporting = false;
 				inputEnabled = true;
-				transform.position = teleportEndPosition;
+				transform.position = prevLoc.transform.position;
 				rigidbody.velocity = Vector3.zero;
 				Instantiate (teleportArriveEffect, transform.position, Quaternion.identity);
 				renderer.enabled = true;
 				collider.enabled = true;
 				warpTime = 0;
-				
+				Destroy (prevLoc);
+				prevLoc = null;
 			}
 			
 		}
@@ -135,6 +136,7 @@ public class Player : MonoBehaviour {
 				Destroy(prevLoc);
 			}
 			prevLoc = Instantiate(marker, curLoc, Quaternion.identity) as GameObject;
+			prevLoc.transform.parent = transform.parent;
 			set = true;
 		}
 		if(Input.GetKeyUp(KeyCode.Mouse0)) {
@@ -144,8 +146,8 @@ public class Player : MonoBehaviour {
 				set = false;
 				isTeleporting = true;
 				teleportStartPosition = transform.position;
-				teleportEndPosition = GameObject.FindGameObjectWithTag("Marker").transform.position;
-				Destroy(prevLoc);
+				//teleportEndPosition = prevLoc.transform.position;
+				prevLoc.GetComponent<Marker>().setInvis();
 			}
 		}
 	}

@@ -20,10 +20,26 @@ public class Bridge : MonoBehaviour {
 		if(vertical){
 			if(transform.rotation.eulerAngles.y < 90 || transform.rotation.eulerAngles.y > 355)
 				rotate();
+				
+			if(transform.rotation.eulerAngles.y > 90){
+				Vector3 temp = transform.rotation.eulerAngles;
+				temp.y = 90;
+				Quaternion tempRot = transform.rotation;
+				tempRot.eulerAngles = temp;
+				transform.rotation = tempRot;
+			}
 		}
 		else {
 			if(transform.rotation.eulerAngles.y > 0 && transform.rotation.eulerAngles.y < 95)
 				rotate_back();
+				
+			if(transform.rotation.eulerAngles.y > 355){
+				Vector3 temp = transform.rotation.eulerAngles;
+				temp.y = 0;
+				Quaternion tempRot = transform.rotation;
+				tempRot.eulerAngles = temp;
+				transform.rotation = tempRot;
+			}
 		}		
 	}
 	
