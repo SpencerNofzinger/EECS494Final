@@ -18,6 +18,7 @@ public class Win : MonoBehaviour {
 	{
 		if(col.gameObject.CompareTag ("Player"))
 		{
+			print("here");
 			Application.LoadLevel (nextLevel);
 		}
 	}

@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
-
+	
+	
 	private Vector3 curLoc;
 	private GameObject prevLoc;
 	public float moveSpeed = 2;
@@ -10,30 +11,30 @@ public class Player : MonoBehaviour {
 	private bool set;
 	public GameObject marker;
 	public GameObject teleportArriveEffect;
-
+	
 	// Camera variables
 	private Vector3 mouseOrigin;	// Position of cursor when mouse dragging starts
 	private bool isRotating;	// Is the camera being rotated?
 	private float turnSpeed = 4.0f;
-
+	
 	// Camera transition variables
 	private bool isTeleporting;
 	private Vector3 teleportStartPosition;
 	private Vector3 teleportEndPosition;
 	private float warpTime = 0.0f;
 	private float maxWarpTime = 0.8f;
-
+	
 	private bool inputEnabled = true;
-
+	
 	void Update () 
 	{
 
 		CameraCheck ();
 		if (inputEnabled) {
-						InputListen ();
-						Poof ();
-				}
-
+			InputListen ();
+			Poof ();
+		}
+		
 		if (isTeleporting) {
 			renderer.enabled = false;
 			collider.enabled = false;
@@ -49,9 +50,9 @@ public class Player : MonoBehaviour {
 				renderer.enabled = true;
 				collider.enabled = true;
 				warpTime = 0;
-
-			}
 				
+			}
+			
 		}
 	}
 
@@ -67,7 +68,7 @@ public class Player : MonoBehaviour {
 
 	private void InputListen() {
 		curLoc = transform.position;
-
+		
 		Vector3 velocity = Vector3.zero;
 		velocity.y = rigidbody.velocity.y;
 		if(Input.GetKey(KeyCode.A))
@@ -90,9 +91,12 @@ public class Player : MonoBehaviour {
 		{
 			Application.LoadLevel (Application.loadedLevel);
 		}
-
+		
+		// Rotate player based on mouse
+		transform.Rotate(Vector3.up * rotateSpeed * Input.GetAxis ("Mouse X"));
+		
 		// Camera stuff
-
+		/*
 		if(Input.GetMouseButtonDown(0))
 		{
 			// Get mouse origin
@@ -109,27 +113,27 @@ public class Player : MonoBehaviour {
 			transform.RotateAround(transform.position, Vector3.up, -pos.x * turnSpeed);
 
 		}
-
+		*/
 		// end camera stuff
-
-
+		
+		
 		//if(Input.GetKey(KeyCode.Space))
-			//curLoc.y += 2* moveSpeed * Time.fixedDeltaTime;
+		//curLoc.y += 2* moveSpeed * Time.fixedDeltaTime;
 		transform.rigidbody.velocity = velocity;
 		
 	}
-
+	
 	private void Poof() {
-		if(Input.GetKeyUp(KeyCode.J)) {
+		if(Input.GetKeyUp(KeyCode.Mouse1)) {
 			if(set) {
 				Destroy(prevLoc);
 			}
 			prevLoc = Instantiate(marker, curLoc, Quaternion.identity) as GameObject;
 			set = true;
 		}
-		if(Input.GetKeyUp(KeyCode.K)) {
+		if(Input.GetKeyUp(KeyCode.Mouse0)) {
 			if(set) {
-
+				
 				//transform.position = prevLoc.transform.position;
 				set = false;
 				isTeleporting = true;
@@ -139,13 +143,23 @@ public class Player : MonoBehaviour {
 			}
 		}
 	}
-
-	void OnCollisionStay (Collision hit) { 
+	
+	void OnCollisionEnter (Collision hit) { 
 		if(hit.gameObject.CompareTag ("MovingPlatform"))
 		{
-			transform.parent = hit.transform ; 
+			transform.parent = hit.gameObject.transform; 
 		}
-		else
+		else if(hit.gameObject.CompareTag ("RotatingPlatform"))
+		{
+			transform.parent = hit.gameObject.transform.parent; 
+		}
+	}
+	void OnCollisionExit(Collision hit){
+		if(hit.gameObject.CompareTag ("MovingPlatform"))
+		{
+			transform.parent = null; 
+		}
+		else if(hit.gameObject.CompareTag ("RotatingPlatform"))
 		{
 			transform.parent = null;
 		}

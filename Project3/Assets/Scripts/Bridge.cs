@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class Bridge : MonoBehaviour {
+	public GameObject ParentObject;
+
 	public bool vertical;
 	bool prev;
 	public float degreesPerSecond = 45f;
