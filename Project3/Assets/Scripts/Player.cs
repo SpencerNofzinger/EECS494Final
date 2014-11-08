@@ -132,14 +132,16 @@ public class Player : MonoBehaviour {
 		}
 	}
 	
-	void OnCollisionStay (Collision hit) { 
+	void OnCollisionEnter (Collision hit) { 
 		if(hit.gameObject.CompareTag ("MovingPlatform"))
 		{
-			transform.parent = hit.transform ; 
+			transform.parent = hit.gameObject.transform.parent; 
 		}
-		else
+	}
+	void OnCollisionExit(Collision hit){
+		if(hit.gameObject.CompareTag ("MovingPlatform"))
 		{
-			transform.parent = null;
+			transform.parent = null; 
 		}
 	}
 }
