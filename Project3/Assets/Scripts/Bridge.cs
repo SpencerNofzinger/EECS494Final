@@ -16,11 +16,11 @@ public class Bridge : MonoBehaviour {
 	void Update () {
 		//put this in function
 		if(vertical){
-			if(Mathf.Abs(totalRotation) < Mathf.Abs(rotationDegreesAmount))
+			if(transform.rotation.eulerAngles.y < 90 || transform.rotation.eulerAngles.y > 355)
 				rotate();
 		}
 		else {
-			if(Mathf.Abs(totalRotation) > 0)
+			if(transform.rotation.eulerAngles.y > 0 && transform.rotation.eulerAngles.y < 95)
 				rotate_back();
 		}		
 	}
@@ -38,7 +38,7 @@ public class Bridge : MonoBehaviour {
 	void rotate_back(){
 		float currentAngle = transform.rotation.eulerAngles.y;
 		transform.rotation = 
-		Quaternion.AngleAxis(currentAngle + (Time.deltaTime * degreesPerSecond), Vector3.up);
+		Quaternion.AngleAxis(currentAngle - (Time.deltaTime * degreesPerSecond), Vector3.up);
 		totalRotation -= Time.deltaTime * degreesPerSecond;
 		if(totalRotation < 0){
 			totalRotation = 0;

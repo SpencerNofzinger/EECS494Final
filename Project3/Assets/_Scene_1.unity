@@ -247,6 +247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vertical: 0
+  degreesPerSecond: 45
+  rotationDegreesAmount: 90
 --- !u!23 &380905784
 Renderer:
   m_ObjectHideFlags: 0
@@ -333,6 +335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vertical: 0
+  degreesPerSecond: 45
+  rotationDegreesAmount: 90
 --- !u!23 &459437794
 Renderer:
   m_ObjectHideFlags: 0
@@ -419,6 +423,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vertical: 1
+  degreesPerSecond: 45
+  rotationDegreesAmount: 90
 --- !u!23 &557202631
 Renderer:
   m_ObjectHideFlags: 0
@@ -663,6 +669,7 @@ MonoBehaviour:
   moveSpeed: 5
   rotateSpeed: 0
   marker: {fileID: 100000, guid: c3abe0c7ab9d5e04887e3ee3c41e31da, type: 2}
+  teleportArriveEffect: {fileID: 100000, guid: 91db3bfe7b6fe124db78ea7c5857e71e, type: 2}
 --- !u!54 &733702641
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1893,6 +1900,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vertical: 1
+  degreesPerSecond: 45
+  rotationDegreesAmount: 90
 --- !u!23 &1666086366
 Renderer:
   m_ObjectHideFlags: 0
@@ -2064,6 +2073,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vertical: 1
+  degreesPerSecond: 45
+  rotationDegreesAmount: 90
 --- !u!23 &1836788118
 Renderer:
   m_ObjectHideFlags: 0
