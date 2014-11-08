@@ -18,6 +18,7 @@ public class Player : MonoBehaviour {
 	private Vector3 mouseOrigin;	// Position of cursor when mouse dragging starts
 	private bool isRotating;	// Is the camera being rotated?
 	private float turnSpeed = 4.0f;
+	private Vector3 defaultCameraPosition;
 	
 	// Camera transition variables
 	private bool isTeleporting;
@@ -27,7 +28,10 @@ public class Player : MonoBehaviour {
 	private float maxWarpTime = 0.8f;
 	
 	private bool inputEnabled = true;
-	
+
+	void Awake(){
+		defaultCameraPosition = Camera.main.transform.localPosition;
+		}
 	void Update () 
 	{
 
@@ -65,10 +69,12 @@ public class Player : MonoBehaviour {
 	private void CameraCheck(){
 		RaycastHit hit;
 		Ray cameraToPlayer = new Ray(transform.position, Camera.main.transform.position - transform.position);
-		if (Physics.Raycast (cameraToPlayer, out hit, Mathf.Sqrt (109))) {
+		int layerMask = 1 << 8;
+		layerMask = ~layerMask;
+		if (Physics.Raycast (cameraToPlayer, out hit, Mathf.Sqrt (109), layerMask)) {
 			Camera.main.transform.position = hit.point;
 				} else {
-
+					Camera.main.transform.localPosition = defaultCameraPosition;
 				}
 	}
 
