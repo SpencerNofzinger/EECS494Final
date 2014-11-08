@@ -33,4 +33,8 @@ public class Marker : MonoBehaviour {
 			transform.parent = null;
 		}
 	}
+
+	public void setInvis(){
+		renderer.enabled = false;
+	}
 }
