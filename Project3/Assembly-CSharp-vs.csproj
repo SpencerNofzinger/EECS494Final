@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\BridgeSwitch_Patrick.cs" />
      <Compile Include="Assets\Scripts\BridgeSwitch_Patrick_Shift.cs" />
      <Compile Include="Assets\Scripts\Bridge_Patrick.cs" />
+     <Compile Include="Assets\Scripts\CamVert.cs" />
      <Compile Include="Assets\Scripts\Door.cs" />
      <Compile Include="Assets\Scripts\FallingBridge.cs" />
      <Compile Include="Assets\Scripts\Instructions.cs" />

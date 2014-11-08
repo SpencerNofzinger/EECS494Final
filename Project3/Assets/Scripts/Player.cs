@@ -31,6 +31,7 @@ public class Player : MonoBehaviour {
 
 	void Awake(){
 		defaultCameraPosition = Camera.main.transform.localPosition;
+		Screen.showCursor = false;
 		}
 	void Update () 
 	{
