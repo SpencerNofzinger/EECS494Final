@@ -63,6 +63,11 @@
      <Compile Include="Assets\Scripts\Switch.cs" />
      <Compile Include="Assets\Scripts\TeleportArriveParticle.cs" />
      <Compile Include="Assets\Scripts\Win.cs" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{A29DF482-1F20-BDFA-E9BD-A8C3F644B153}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

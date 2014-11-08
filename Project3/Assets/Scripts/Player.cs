@@ -11,6 +11,8 @@ public class Player : MonoBehaviour {
 	private bool set;
 	public GameObject marker;
 	public GameObject teleportArriveEffect;
+	GameObject HaloEffectObject;
+	public GameObject teleportHaloEffect;
 	
 	// Camera variables
 	private Vector3 mouseOrigin;	// Position of cursor when mouse dragging starts
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour {
 			inputEnabled = false;
 			transform.position = Vector3.Lerp (transform.position, prevLoc.transform.position, warpTime / maxWarpTime);
 			warpTime += Time.deltaTime;
+			HaloEffectObject.transform.position = transform.position;
 			if (Vector3.Distance (transform.position, prevLoc.transform.position) < .5f){
 				isTeleporting = false;
 				inputEnabled = true;
@@ -52,6 +55,8 @@ public class Player : MonoBehaviour {
 				warpTime = 0;
 				Destroy (prevLoc);
 				prevLoc = null;
+				Destroy (HaloEffectObject);
+				HaloEffectObject = null;
 			}
 			
 		}
@@ -140,7 +145,8 @@ public class Player : MonoBehaviour {
 				set = false;
 				isTeleporting = true;
 				teleportStartPosition = transform.position;
-				//teleportEndPosition = prevLoc.transform.position;
+				HaloEffectObject = Instantiate(teleportHaloEffect, curLoc, Quaternion.identity) as GameObject;
+				//HaloEffectObject.transform.parent = transform;
 				prevLoc.GetComponent<Marker>().setInvis();
 			}
 		}
