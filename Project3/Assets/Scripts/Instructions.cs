@@ -17,7 +17,9 @@ public class Instructions : MonoBehaviour {
 		}
 		this.gameObject.collider.isTrigger = true;
 		this.gameObject.collider.enabled = true;
+
 		text = this.gameObject.GetComponentInChildren<GUIText> ();
+		text.transform.position = new Vector3(0, 1, 0);
 		text.guiText.enabled = false;
 	}
 	
