@@ -28,6 +28,8 @@ public class Player : MonoBehaviour {
 	
 	void Update () 
 	{
+
+		CameraCheck ();
 		if (inputEnabled) {
 			InputListen ();
 			Poof ();
@@ -53,7 +55,17 @@ public class Player : MonoBehaviour {
 			
 		}
 	}
-	
+
+	private void CameraCheck(){
+		RaycastHit hit;
+		Ray cameraToPlayer = new Ray(transform.position, Camera.main.transform.position - transform.position);
+		if (Physics.Raycast (cameraToPlayer, out hit, Mathf.Sqrt (109))) {
+			Camera.main.transform.position = hit.point;
+				} else {
+
+				}
+	}
+
 	private void InputListen() {
 		curLoc = transform.position;
 		
