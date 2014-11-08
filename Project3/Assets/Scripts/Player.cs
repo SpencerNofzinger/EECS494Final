@@ -135,6 +135,10 @@ public class Player : MonoBehaviour {
 	void OnCollisionEnter (Collision hit) { 
 		if(hit.gameObject.CompareTag ("MovingPlatform"))
 		{
+			transform.parent = hit.gameObject.transform; 
+		}
+		else if(hit.gameObject.CompareTag ("RotatingPlatform"))
+		{
 			transform.parent = hit.gameObject.transform.parent; 
 		}
 	}
@@ -142,6 +146,10 @@ public class Player : MonoBehaviour {
 		if(hit.gameObject.CompareTag ("MovingPlatform"))
 		{
 			transform.parent = null; 
+		}
+		else if(hit.gameObject.CompareTag ("RotatingPlatform"))
+		{
+			transform.parent = null;
 		}
 	}
 }

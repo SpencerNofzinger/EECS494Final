@@ -87,7 +87,7 @@ GameObject:
   - 23: {fileID: 79281713}
   m_Layer: 0
   m_Name: BridgeChild
-  m_TagString: MovingPlatform
+  m_TagString: RotatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,7 +345,7 @@ GameObject:
   - 23: {fileID: 459141827}
   m_Layer: 0
   m_Name: BridgeChild
-  m_TagString: MovingPlatform
+  m_TagString: RotatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -417,7 +417,7 @@ GameObject:
   - 23: {fileID: 459437794}
   m_Layer: 0
   m_Name: BridgeChild
-  m_TagString: MovingPlatform
+  m_TagString: RotatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -534,7 +534,7 @@ GameObject:
   - 23: {fileID: 635106790}
   m_Layer: 0
   m_Name: BridgeChild
-  m_TagString: MovingPlatform
+  m_TagString: RotatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2036,7 +2036,7 @@ GameObject:
   - 23: {fileID: 1668538988}
   m_Layer: 0
   m_Name: BridgeChild
-  m_TagString: MovingPlatform
+  m_TagString: RotatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -13,12 +13,22 @@ public class Marker : MonoBehaviour {
 		
 	}
 
-	void OnCollisionStay (Collision hit) { 
+	void OnCollisionEnter (Collision hit) { 
 		if(hit.gameObject.CompareTag ("MovingPlatform"))
 		{
-			transform.parent = hit.transform ; 
+			transform.parent = hit.gameObject.transform; 
 		}
-		else
+		else if(hit.gameObject.CompareTag ("RotatingPlatform"))
+		{
+			transform.parent = hit.gameObject.transform.parent; 
+		}
+	}
+	void OnCollisionExit(Collision hit){
+		if(hit.gameObject.CompareTag ("MovingPlatform"))
+		{
+			transform.parent = null; 
+		}
+		else if(hit.gameObject.CompareTag ("RotatingPlatform"))
 		{
 			transform.parent = null;
 		}
