@@ -17,7 +17,7 @@ public class BridgeSwitch : MonoBehaviour {
 	{
 		if(col.gameObject.CompareTag ("Player"))
 		{
-			GameObject[] BridgeList = GameObject.FindGameObjectsWithTag ("Bridge");
+			GameObject[] BridgeList = GameObject.FindGameObjectsWithTag ("MovingPlatform");
 			for(int i = 0; i < BridgeList.Length; ++i)
 			{
 				BridgeList[i].GetComponent<Bridge>().vertical = !BridgeList[i].GetComponent<Bridge>().vertical;
