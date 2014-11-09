@@ -4,7 +4,14 @@ using System.Collections;
 public class Instructions : MonoBehaviour {
 	public enum collType {Sphere, Cube};
 	public collType type;
-	GUIText text;
+	public GUIText text;
+	public GameObject list;
+	public int instructNum;
+	InstructionList actualList;
+
+	void Awake () {
+		actualList = list.GetComponent<InstructionList> ();
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -13,21 +20,21 @@ public class Instructions : MonoBehaviour {
 			(myCollider as SphereCollider).radius = 0.5f;
 		} if (type == collType.Cube) {
 			var myCollider = this.gameObject.AddComponent(typeof(BoxCollider));
-			(myCollider as BoxCollider).size = new Vector3(1.0f, 1.0f, 1.0f);
+			(myCollider as BoxCollider).size = new Vector3(0.9f, 0.9f, 0.9f);
 		}
 		this.gameObject.collider.isTrigger = true;
 		this.gameObject.collider.enabled = true;
-
-		text = this.gameObject.GetComponentInChildren<GUIText> ();
-		text.transform.position = new Vector3(0, 1, 0);
-		text.guiText.enabled = false;
 	}
 	
-	void OnTriggerEnter () {
-		text.guiText.enabled = true;
+	void OnTriggerEnter (Collider coll) {
+		if(coll == GameObject.FindGameObjectWithTag("Player").collider) {
+			actualList.Enter (instructNum);
+		}
 	}
 
-	void OnTriggerExit () {
-		text.guiText.enabled = false;
+	void OnTriggerExit (Collider coll) {
+		if(coll == GameObject.FindGameObjectWithTag("Player").collider) {
+			actualList.Exit (instructNum);
+		}
 	}
 }
