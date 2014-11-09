@@ -28,14 +28,11 @@ public class Instructions : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider coll) {
 		if(coll == GameObject.FindGameObjectWithTag("Player").collider) {
-//			Debug.Log ("collider is: " + coll.gameObject.name);
-//			Debug.Log ("on enter: " + instructNum);
 			actualList.Enter (instructNum);
 		}
 	}
 
 	void OnTriggerExit (Collider coll) {
-//		Debug.Log ("on exit: " + instructNum);
 		if(coll == GameObject.FindGameObjectWithTag("Player").collider) {
 			actualList.Exit (instructNum);
 		}
