@@ -17,9 +17,15 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 																																																																																																							GlobalSection(MonoDevelopProperties) = preSolution
 =======
+=======
+<<<<<<< HEAD
+>>>>>>> parent of 3f04514... Linked Levels
 																																																																																																					GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																																																																																																						GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> origin/master
 =======
 																																																																																								GlobalSection(MonoDevelopProperties) = preSolution
