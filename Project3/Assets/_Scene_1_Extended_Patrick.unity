@@ -1391,7 +1391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85c95db84549674e93be0ef2cc29aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: _Scene_1_Alex
+  nextLevel: _Scene_2_Kyle
 --- !u!23 &1303624231
 Renderer:
   m_ObjectHideFlags: 0
@@ -1871,7 +1871,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 30f950dc6f2479b4b8296ab516a0653f, type: 2}
       propertyPath: nextLevel
-      value: _Scene_1_Alex
+      value: _Scene_2_Kyle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30f950dc6f2479b4b8296ab516a0653f, type: 2}
