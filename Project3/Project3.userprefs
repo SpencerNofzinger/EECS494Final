@@ -1,18 +1,10 @@
 ﻿<Properties>
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LoopingMovingPlatform.cs">
-    <Files>
-      <File FileName="Assets\Scripts\MovingPlatformSwitch.cs" Line="16" Column="2" />
-      <File FileName="Assets\Scripts\LoopingMovingPlatform.cs" Line="63" Column="17" />
-=======
-  <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\InstructionList.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player.cs" Line="33" Column="1" />
-      <File FileName="Assets\Scripts\Instructions.cs" Line="30" Column="68" />
-      <File FileName="Assets\Scripts\InstructionList.cs" Line="1" Column="1" />
->>>>>>> origin/master
+      <File FileName="Assets\Scripts\Player.cs" Line="74" Column="22" />
+      <File FileName="Assets\Scripts\InstructionList.cs" Line="33" Column="16" />
+      <File FileName="Assets\Scripts\Instructions.cs" Line="7" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

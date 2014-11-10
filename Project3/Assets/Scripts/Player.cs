@@ -71,6 +71,7 @@ public class Player : MonoBehaviour {
 		RaycastHit hit;
 		Ray cameraToPlayer = new Ray(transform.position, Camera.main.transform.position - transform.position);
 		int layerMask = 1 << 8;
+		layerMask += 1 << 2;
 		layerMask = ~layerMask;
 		if (Physics.Raycast (cameraToPlayer, out hit, Mathf.Sqrt (109), layerMask)) {
 			Camera.main.transform.position = hit.point;
