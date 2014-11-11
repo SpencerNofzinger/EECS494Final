@@ -17,15 +17,16 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-<<<<<<< HEAD
-																																																																																																							GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																									GlobalSection(MonoDevelopProperties) = preSolution
 =======
-=======
-<<<<<<< HEAD
->>>>>>> parent of 3f04514... Linked Levels
 																																																																																																					GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> parent of de7961b... Camera perspective change
 =======
-																																																																																																						GlobalSection(MonoDevelopProperties) = preSolution
+<<<<<<< HEAD
+																																																																																																				GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> parent of 3f04514... Linked Levels
+=======
+																																																																																																					GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> origin/master
 =======
 																																																																																								GlobalSection(MonoDevelopProperties) = preSolution

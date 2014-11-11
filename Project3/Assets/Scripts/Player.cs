@@ -73,7 +73,7 @@ public class Player : MonoBehaviour {
 		int layerMask = 1 << 8;
 		layerMask += 1 << 2;
 		layerMask = ~layerMask;
-		if (Physics.Raycast (cameraToPlayer, out hit, 5.0f, layerMask)) {
+		if (Physics.Raycast (cameraToPlayer, out hit, Mathf.Sqrt (109), layerMask)) {
 			Camera.main.transform.position = hit.point;
 				} else {
 					Camera.main.transform.localPosition = defaultCameraPosition;
