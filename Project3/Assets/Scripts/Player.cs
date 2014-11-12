@@ -32,6 +32,7 @@ public class Player : MonoBehaviour {
 	void Awake(){
 		defaultCameraPosition = Camera.main.transform.localPosition;
 		Screen.showCursor = false;
+		Screen.lockCursor = true;
 		}
 	void Update () 
 	{
@@ -104,6 +105,10 @@ public class Player : MonoBehaviour {
 		if(Input.GetKey (KeyCode.Escape))
 		{
 			Application.LoadLevel (Application.loadedLevel);
+		}
+		if(Input.GetKey(KeyCode.P))
+		{
+			Screen.lockCursor = !Screen.lockCursor;
 		}
 		
 		// Rotate player based on mouse
