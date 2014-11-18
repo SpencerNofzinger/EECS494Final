@@ -29,13 +29,35 @@ public class Player : MonoBehaviour {
 	
 	private bool inputEnabled = true;
 
+	// Model child
+	private GameObject model;
+	private GameObject modelmeshobject;
+
+	// Animator
+	private Animator anim;
+	private float fallpoint = -.1f;
+	private float fallpoint2 = -1f;
+	private Vector3 diagleft = new Vector3(0, 315, 0);
+	private Vector3 diagright = new Vector3(0, 90, 0);
+
 	void Awake(){
 		defaultCameraPosition = Camera.main.transform.localPosition;
 		Screen.showCursor = false;
 		Screen.lockCursor = true;
+		model = transform.GetChild (0).gameObject;
+		modelmeshobject = model.transform.GetChild (0).gameObject;
+		anim = model.GetComponent<Animator> ();
 		}
 	void Update () 
 	{
+		if (rigidbody.velocity == Vector3.zero) 
+		{
+			anim.Play ("idle");		
+		}
+		else if(rigidbody.velocity.y < fallpoint2)
+		{
+			anim.Play ("fall");
+		}
 
 		CameraCheck ();
 		if (inputEnabled) {
@@ -44,7 +66,8 @@ public class Player : MonoBehaviour {
 		}
 		
 		if (isTeleporting) {
-			renderer.enabled = false;
+			// Turn renderer and collider off
+			modelmeshobject.GetComponent<TurnMeshOff>().off ();
 			collider.enabled = false;
 			inputEnabled = false;
 			transform.position = Vector3.Lerp (transform.position, prevLoc.transform.position, warpTime / maxWarpTime);
@@ -56,7 +79,7 @@ public class Player : MonoBehaviour {
 				transform.position = prevLoc.transform.position;
 				rigidbody.velocity = Vector3.zero;
 				Instantiate (teleportArriveEffect, transform.position, Quaternion.identity);
-				renderer.enabled = true;
+				modelmeshobject.GetComponent<TurnMeshOff>().on ();
 				collider.enabled = true;
 				warpTime = 0;
 				Destroy (prevLoc);
@@ -72,6 +95,7 @@ public class Player : MonoBehaviour {
 		RaycastHit hit;
 		Ray cameraToPlayer = new Ray(transform.position, Camera.main.transform.position - transform.position);
 		int layerMask = 1 << 8;
+		layerMask += 1 << 9;
 		layerMask += 1 << 2;
 		layerMask = ~layerMask;
 		if (Physics.Raycast (cameraToPlayer, out hit, 7.0f, layerMask)) {
@@ -86,20 +110,28 @@ public class Player : MonoBehaviour {
 		
 		Vector3 velocity = Vector3.zero;
 		velocity.y = rigidbody.velocity.y;
-		if(Input.GetKey(KeyCode.A))
+		if(Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
 		{
 			velocity += Vector3.Cross (transform.forward, Vector3.up) * moveSpeed;
 		}
-		if(Input.GetKey(KeyCode.D))
+		if(Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
 		{
 			velocity += Vector3.Cross (transform.forward, Vector3.up) * -moveSpeed;
 		}
-		if(Input.GetKey(KeyCode.W))
+		if(Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
 		{
+			if(rigidbody.velocity.y > fallpoint)
+			{
+				anim.Play ("forward");
+			}
 			velocity += transform.forward * moveSpeed;
 		}
-		if(Input.GetKey(KeyCode.S))
+		if(Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
 		{
+			if(rigidbody.velocity.y > fallpoint)
+			{
+				anim.Play ("backward");
+			}
 			velocity += transform.forward * -moveSpeed;
 		}
 		if(Input.GetKey (KeyCode.Escape))
@@ -110,34 +142,89 @@ public class Player : MonoBehaviour {
 		{
 			Screen.lockCursor = !Screen.lockCursor;
 		}
-		
+
+		// Animations ====================================
+		// no movement
+		if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S)
+		   && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.D)
+		   && rigidbody.velocity.y > fallpoint)
+		{
+			anim.Play ("idle");
+			model.transform.rotation = transform.rotation;
+		}
+
+		// left only
+		if(Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S)
+		   && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.D)
+		   && rigidbody.velocity.y > fallpoint)
+		{
+			anim.Play ("strafe_left");
+			model.transform.rotation = transform.rotation;
+		}
+		// right only
+		if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S)
+		   && !Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D)
+		   && rigidbody.velocity.y > fallpoint)
+		{
+			anim.Play ("strafe_right");
+			model.transform.rotation = transform.rotation;
+		}
+
+		// forward only
+		if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S)
+		   && Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.D)
+		   && rigidbody.velocity.y > fallpoint)
+		{
+			anim.Play ("forward");
+			model.transform.rotation = transform.rotation;
+		}
+
+		// backward only
+		if(!Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S)
+		   && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.D)
+		   && rigidbody.velocity.y > fallpoint)
+		{
+			anim.Play ("backward");
+			model.transform.rotation = transform.rotation;
+		}
+
+		// diagonal right forward
+		if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S)
+		   && Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D)
+		   && rigidbody.velocity.y > fallpoint)
+		{
+			set_model_y_rot (45);
+		}
+
+		// diagonal left forward
+		if(Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S)
+		   && Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.D)
+		   && rigidbody.velocity.y > fallpoint)
+		{
+			set_model_y_rot (315);
+		}
+
+		// diagonal right backward
+		if(!Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S)
+		   && !Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D)
+		   && rigidbody.velocity.y > fallpoint)
+		{
+			set_model_y_rot (315);
+		}
+
+		// diagonal left backward
+		if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S)
+		   && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.D)
+		   && rigidbody.velocity.y > fallpoint)
+		{
+			set_model_y_rot (45);
+		}
+
+
 		// Rotate player based on mouse
 		transform.Rotate(Vector3.up * rotateSpeed * Input.GetAxis ("Mouse X"));
-		
-		// Camera stuff
-		/*
-		if(Input.GetMouseButtonDown(0))
-		{
-			// Get mouse origin
-			mouseOrigin = Input.mousePosition;
-			isRotating = true;
-		}
-		if (!Input.GetMouseButton(0)) isRotating=false;
 
-		if (isRotating)
-		{
-			Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
-			
-			//transform.RotateAround(transform.position, transform.right, -pos.y * turnSpeed);
-			transform.RotateAround(transform.position, Vector3.up, -pos.x * turnSpeed);
 
-		}
-		*/
-		// end camera stuff
-		
-		
-		//if(Input.GetKey(KeyCode.Space))
-		//curLoc.y += 2* moveSpeed * Time.fixedDeltaTime;
 		transform.rigidbody.velocity = velocity;
 		
 	}
@@ -184,5 +271,14 @@ public class Player : MonoBehaviour {
 		{
 			transform.parent = null;
 		}
+	}
+
+	private void set_model_y_rot(float y)
+	{
+		Vector3 euler;
+		euler.x = 0;
+		euler.z = 0;
+		euler.y = transform.rotation.eulerAngles.y + y; 
+		model.transform.rotation = Quaternion.Euler (euler);
 	}
 }

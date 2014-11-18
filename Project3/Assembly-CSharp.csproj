@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\Switch.cs" />
      <Compile Include="Assets\Scripts\TeleportArriveParticle.cs" />
      <Compile Include="Assets\Scripts\TimedDoorSwitch.cs" />
+     <Compile Include="Assets\Scripts\TurnMeshOff.cs" />
      <Compile Include="Assets\Scripts\Win.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
   </ItemGroup>
