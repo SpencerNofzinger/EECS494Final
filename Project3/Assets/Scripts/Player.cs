@@ -90,7 +90,7 @@ public class Player : MonoBehaviour {
 			
 		}
 	}
-
+	/*
 	private void CameraCheck(){
 		RaycastHit hit;
 		Ray cameraToPlayer = new Ray(transform.position, Camera.main.transform.position - transform.position);
@@ -103,6 +103,73 @@ public class Player : MonoBehaviour {
 				} else {
 					Camera.main.transform.localPosition = defaultCameraPosition;
 				}
+	}*/
+
+	/*private void CameraCheck(){
+		RaycastHit[] hits;
+		Ray cameraToPlayer = new Ray(transform.position, Camera.main.transform.position - transform.position);
+		int layerMask = 1 << 8;
+		layerMask += 1 << 9;
+		layerMask += 1 << 2;
+		layerMask = ~layerMask;
+		hits = Physics.RaycastAll (cameraToPlayer, 7.0f, layerMask);
+
+		for (int i = 0; i < hits.Length; ++i){
+			RaycastHit hit = hits[i];
+			Renderer renderer = hit.collider.renderer;
+			if (renderer) {
+				AddTransparency AT = renderer.GetComponent<AddTransparency>();
+				if (!AT){
+					AT = renderer.gameObject.AddComponent<AddTransparency>();
+				}
+				AT.makeTransparent();
+
+			}
+		}
+	}*/
+
+	private void CameraCheck(){
+		RaycastHit[] hits;
+		int layerMask = 1 << 8;
+		layerMask += 1 << 9;
+		layerMask += 1 << 2;
+		layerMask = ~layerMask;
+		for (int playerPoint = 0; playerPoint < 4; playerPoint++) {
+			Ray cameraToPlayer;
+			Vector3 referencePosition = transform.position;
+			if (playerPoint == 0){
+				referencePosition.x += 0.45f * transform.localScale.x;
+				referencePosition.y += 0.45f * transform.localScale.y;
+			}
+			if (playerPoint == 1){
+				referencePosition.x += 0.45f * transform.localScale.x;
+				referencePosition.y -= 0.45f * transform.localScale.y;
+			}
+			if (playerPoint == 2){
+				referencePosition.x -= 0.45f * transform.localScale.x;
+				referencePosition.y += 0.45f * transform.localScale.y;
+			}
+			if (playerPoint == 3){
+				referencePosition.x -= 0.45f * transform.localScale.x;
+				referencePosition.y -= 0.45f * transform.localScale.y;
+			}
+
+			cameraToPlayer = new Ray (referencePosition, Camera.main.transform.position - transform.position);
+
+			hits = Physics.RaycastAll (cameraToPlayer, 7.0f, layerMask);
+				
+			for (int i = 0; i < hits.Length; ++i) {
+					RaycastHit hit = hits [i];
+					Renderer renderer = hit.collider.renderer;
+					if (renderer) {
+							AddTransparency AT = renderer.GetComponent<AddTransparency> ();
+							if (!AT) {
+									AT = renderer.gameObject.AddComponent<AddTransparency> ();
+							}
+							AT.makeTransparent ();
+					}
+			}
+		}
 	}
 
 	private void InputListen() {
