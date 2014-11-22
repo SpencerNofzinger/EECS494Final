@@ -857,7 +857,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
       propertyPath: m_RootOrder
-      value: 54
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
       propertyPath: m_LocalScale.x
@@ -874,6 +874,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
       propertyPath: open
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
+      propertyPath: m_TagString
+      value: DoorRed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
@@ -1316,7 +1320,7 @@ GameObject:
   - 23: {fileID: 388592642}
   - 114: {fileID: 388592641}
   m_Layer: 2
-  m_Name: DoorSwitch
+  m_Name: DoorSwitchRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1334,6 +1338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a5c8d9d9500f3a4a89907a5d8af197d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorTag: DoorRed
 --- !u!23 &388592642
 Renderer:
   m_ObjectHideFlags: 0
@@ -2131,8 +2136,8 @@ GameObject:
   - 23: {fileID: 615059280}
   - 114: {fileID: 615059279}
   m_Layer: 2
-  m_Name: Switch_Door
-  m_TagString: Door
+  m_Name: DoorRed
+  m_TagString: DoorRed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2926,7 +2931,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
       propertyPath: m_RootOrder
-      value: 55
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
       propertyPath: m_LocalScale.x
@@ -2943,6 +2948,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
       propertyPath: open
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
+      propertyPath: m_TagString
+      value: DoorRed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
@@ -4282,8 +4291,8 @@ GameObject:
   - 23: {fileID: 1195538523}
   - 114: {fileID: 1195538522}
   m_Layer: 2
-  m_Name: Switch_Door
-  m_TagString: Door
+  m_Name: DoorRed
+  m_TagString: DoorRed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5575,7 +5584,7 @@ GameObject:
   - 23: {fileID: 1388113946}
   - 114: {fileID: 1388113945}
   m_Layer: 2
-  m_Name: DoorSwitch
+  m_Name: DoorSwitchRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5593,6 +5602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a5c8d9d9500f3a4a89907a5d8af197d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorTag: DoorRed
 --- !u!23 &1388113946
 Renderer:
   m_ObjectHideFlags: 0
@@ -5911,6 +5921,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
       propertyPath: open
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
+      propertyPath: m_TagString
+      value: DoorRed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
@@ -6736,7 +6750,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
       propertyPath: m_RootOrder
-      value: 53
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
       propertyPath: m_LocalScale.x
@@ -6753,6 +6767,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
       propertyPath: open
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
+      propertyPath: m_TagString
+      value: DoorRed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
@@ -7135,8 +7153,8 @@ GameObject:
   - 23: {fileID: 1746272364}
   - 114: {fileID: 1746272363}
   m_Layer: 2
-  m_Name: Switch_Door
-  m_TagString: Door
+  m_Name: DoorRed
+  m_TagString: DoorRed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7435,8 +7453,8 @@ GameObject:
   - 23: {fileID: 1897308351}
   - 114: {fileID: 1897308350}
   m_Layer: 2
-  m_Name: Switch_Door
-  m_TagString: Door
+  m_Name: DoorRed
+  m_TagString: DoorRed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7943,8 +7961,8 @@ GameObject:
   - 23: {fileID: 1976449878}
   - 114: {fileID: 1976449877}
   m_Layer: 2
-  m_Name: Switch_Door
-  m_TagString: Door
+  m_Name: DoorRed
+  m_TagString: DoorRed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
