@@ -5,7 +5,7 @@ public class TimedDoorSwitch : MonoBehaviour {
 
 	float time = 0;
 	public float timeLimit = 5f;
-	const float scaleConst = 5.5f;
+	const float scaleConst = 3.7f;
 	float scale;
 	bool on = false;
 	// Use this for initialization
@@ -20,25 +20,23 @@ public class TimedDoorSwitch : MonoBehaviour {
 		if(time > timeLimit){
 			on = false;
 			time = 0;
-		}
-		if(on){
-			time += Time.deltaTime;
-		}
-		else{
 			GameObject[] DoorList = GameObject.FindGameObjectsWithTag ("DoorTimed");
 			for(int i = 0; i < DoorList.Length; ++i)
 			{
 				DoorList[i].GetComponent<Door>().open = false;
 			}
 		}
-		
+		if(on){
+			time += Time.deltaTime;
+		}
 	}
 	void OnTriggerEnter(Collider col)
 	{
 		print ("collision");
-		if(col.gameObject.CompareTag ("Player") && on == false)
+		GameObject[] DoorList = GameObject.FindGameObjectsWithTag ("DoorTimed");
+		if(col.gameObject.CompareTag ("Player") && on == false && DoorList[0].GetComponent<Door>().open == false)
 		{
-			GameObject[] DoorList = GameObject.FindGameObjectsWithTag ("DoorTimed");
+
 			for(int i = 0; i < DoorList.Length; ++i)
 			{
 				DoorList[i].GetComponent<Door>().open = true;
