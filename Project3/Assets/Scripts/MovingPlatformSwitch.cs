@@ -11,6 +11,11 @@ public class MovingPlatformSwitch : MonoBehaviour {
 			{
 				PlatList[i].GetComponent<LoopingMovingPlatform>().switchOn();
 			}
+			GameObject[] WallList = GameObject.FindGameObjectsWithTag ("MovingWall");
+			for(int i = 0; i < WallList.Length; ++i)
+			{
+				WallList[i].GetComponent<LoopingMovingPlatform>().switchOn();
+			}
 		}
 	}
 }

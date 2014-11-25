@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Move.cs" />
      <Compile Include="Assets\Scripts\MovingPlatformSwitch.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\RotateForever.cs" />
      <Compile Include="Assets\Scripts\Spawn.cs" />
      <Compile Include="Assets\Scripts\TeleportArriveParticle.cs" />
      <Compile Include="Assets\Scripts\TimedDoorSwitch.cs" />
