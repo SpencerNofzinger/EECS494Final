@@ -5,6 +5,7 @@ public class InstructionList : MonoBehaviour {
 	int inUse;
 	GUIText[] list;
 	bool showGUI;
+	//GUIStyle guiStyle;
 
 	void Start () {
 		list = this.GetComponentsInChildren<GUIText> ();
@@ -13,6 +14,8 @@ public class InstructionList : MonoBehaviour {
 			list[i].enabled = false;
 		}
 		inUse = -1;
+		//guiStyle = new GUIStyle();
+		//guiStyle.fontSize = 24;
 	}
 
 	public void Enter (int i) {
@@ -33,7 +36,8 @@ public class InstructionList : MonoBehaviour {
 	void OnGUI() {
 		if(showGUI) {
 			int width = 200, height = 50;	
-			GUI.Box(new Rect((Screen.width - width)/2, Screen.height - height, width, height), list[inUse].text);
+			GUI.Box(new Rect((Screen.width - width)/2, Screen.height/4 - height, width, height), list[inUse].text);
+			//GUI.Box(new Rect((Screen.width - width)/2, Screen.height - height, width, height), list[inUse].text, guiStyle);
 		}
 	}
 }

@@ -1,13 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\InstructionList.cs">
     <Files>
-      <File FileName="Assets\Scripts\RotateForever.cs" Line="13" Column="48" />
-      <File FileName="Assets\Scripts\TimedDoorSwitch.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player.cs" Line="259" Column="51" />
-      <File FileName="Assets\Scripts\AddTransparency.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Marker.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MovingPlatformSwitch.cs" Line="17" Column="9" />
+      <File FileName="Assets\Scripts\Instructions.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\InstructionList.cs" Line="39" Column="62" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
