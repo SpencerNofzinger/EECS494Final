@@ -1411,6 +1411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 3
+  doorTag: DoorTimed
 --- !u!23 &365970002
 Renderer:
   m_ObjectHideFlags: 0
@@ -4346,6 +4347,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 30f950dc6f2479b4b8296ab516a0653f, type: 2}
+      propertyPath: nextLevel
+      value: Scene_TimedDoorsLevel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30f950dc6f2479b4b8296ab516a0653f, type: 2}
   m_RootGameObject: {fileID: 714302186}
@@ -5589,6 +5594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 3
+  doorTag: DoorTimed
 --- !u!23 &1464209169
 Renderer:
   m_ObjectHideFlags: 0
@@ -6631,7 +6637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85c95db84549674e93be0ef2cc29aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: _Scene_Alex
+  nextLevel: Scene_TimedDoorsLevel
 --- !u!1 &1647746126
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,7 +33,6 @@ public class TimedDoorSwitch : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider col)
 	{
-		print ("collision");
 		GameObject[] DoorList = GameObject.FindGameObjectsWithTag (doorTag);
 		if(col.gameObject.CompareTag ("Player") && on == false && DoorList[0].GetComponent<Door>().open == false)
 		{
