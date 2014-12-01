@@ -28,6 +28,13 @@ public class Player : MonoBehaviour {
 	private float maxWarpTime = 0.8f;
 	
 	private bool inputEnabled = true;
+
+	// Map variables
+	private bool mapIsOpen = false;
+	public GameObject mapCameraPrefab;
+	GameObject mapCamera;
+	private GameObject goalMapMarker;
+	public GameObject goalMapMarkerPrefab;
 	
 	void Awake(){
 		defaultCameraPosition = Camera.main.transform.localPosition;
@@ -66,46 +73,30 @@ public class Player : MonoBehaviour {
 			}
 			
 		}
+
+
 	}
 	
-	/*
-	private void CameraCheck(){
-		RaycastHit hit;
-		Ray cameraToPlayer = new Ray(transform.position, Camera.main.transform.position - transform.position);
-		int layerMask = 1 << 8;
-		layerMask += 1 << 9;
-		layerMask += 1 << 2;
-		layerMask = ~layerMask;
-		if (Physics.Raycast (cameraToPlayer, out hit, 7.0f, layerMask)) {
-			Camera.main.transform.position = hit.point;
-				} else {
-					Camera.main.transform.localPosition = defaultCameraPosition;
+	private void mapFunction(bool IsOpen){
+				if (!IsOpen) {
+						mapCamera = Instantiate (mapCameraPrefab) as GameObject;
+						GameObject goal = GameObject.FindWithTag("Goal");
+						Vector3 goalPosition = goal.transform.position;
+						goalMapMarker = Instantiate (goalMapMarkerPrefab) as GameObject;
+						goalMapMarker.transform.position = goal.transform.position;
+						mapIsOpen = true;
+			//inputEnabled = false;
 				}
-	}*/
-	
-	/*private void CameraCheck(){
-		RaycastHit[] hits;
-		Ray cameraToPlayer = new Ray(transform.position, Camera.main.transform.position - transform.position);
-		int layerMask = 1 << 8;
-		layerMask += 1 << 9;
-		layerMask += 1 << 2;
-		layerMask = ~layerMask;
-		hits = Physics.RaycastAll (cameraToPlayer, 7.0f, layerMask);
-
-		for (int i = 0; i < hits.Length; ++i){
-			RaycastHit hit = hits[i];
-			Renderer renderer = hit.collider.renderer;
-			if (renderer) {
-				AddTransparency AT = renderer.GetComponent<AddTransparency>();
-				if (!AT){
-					AT = renderer.gameObject.AddComponent<AddTransparency>();
+				else if (IsOpen) {
+						Destroy (mapCamera);
+						mapCamera = null;
+						Destroy (goalMapMarker);
+						goalMapMarker = null;
+						mapIsOpen = false;
+			//inputEnabled = true;
 				}
-				AT.makeTransparent();
-
-			}
+				
 		}
-	}*/
-	
 	private void CameraCheck(){
 		RaycastHit[] hits;
 		int layerMask = 1 << 8;
@@ -149,6 +140,8 @@ public class Player : MonoBehaviour {
 			}
 		}
 	}
+
+
 	
 	private void InputListen() {
 		curLoc = transform.position;
@@ -179,7 +172,11 @@ public class Player : MonoBehaviour {
 		{
 			Screen.lockCursor = !Screen.lockCursor;
 		}
-		
+
+		if (Input.GetKeyDown (KeyCode.Tab)) {
+			mapFunction (mapIsOpen);
+		}
+
 		// Rotate player based on mouse
 		transform.Rotate(Vector3.up * rotateSpeed * Input.GetAxis ("Mouse X"));
 		

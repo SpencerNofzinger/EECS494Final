@@ -4,8 +4,8 @@ using System.Collections;
 public class AddTransparency : MonoBehaviour {
 	private Shader originalShader = null;
 	private Color originalColor = Color.black;
-	private const float targetTransparency = 0.4f;
-	private float transparency = 0.4f;
+	private const float targetTransparency = 0.6f;
+	private float transparency = 0.0f;
 	private const float fallOff = 0.1f;
 
 	// Use this for initialization

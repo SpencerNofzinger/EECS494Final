@@ -252,7 +252,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 32
 --- !u!1 &38193083
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,7 +972,7 @@ GameObject:
   - 4: {fileID: 305563264}
   - 33: {fileID: 305563266}
   - 23: {fileID: 305563265}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1143,7 +1143,7 @@ GameObject:
   - 4: {fileID: 379986780}
   - 33: {fileID: 379986782}
   - 23: {fileID: 379986781}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1500,7 +1500,7 @@ GameObject:
   - 4: {fileID: 566270038}
   - 33: {fileID: 566270040}
   - 23: {fileID: 566270039}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1616,7 +1616,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 33
 --- !u!1 &591462635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,7 +1855,7 @@ Transform:
   - {fileID: 379986780}
   - {fileID: 1326695612}
   m_Father: {fileID: 0}
-  m_RootOrder: 55
+  m_RootOrder: 54
 --- !u!114 &615059279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1922,7 +1922,7 @@ GameObject:
   - 33: {fileID: 663558578}
   - 65: {fileID: 663558577}
   - 23: {fileID: 663558576}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2188,7 +2188,7 @@ GameObject:
   - 4: {fileID: 758479253}
   - 33: {fileID: 758479255}
   - 23: {fileID: 758479254}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2636,7 +2636,7 @@ GameObject:
   - 4: {fileID: 903641778}
   - 33: {fileID: 903641780}
   - 23: {fileID: 903641779}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2694,7 +2694,7 @@ GameObject:
   - 4: {fileID: 914386450}
   - 33: {fileID: 914386452}
   - 23: {fileID: 914386451}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3233,7 +3233,7 @@ GameObject:
   - 33: {fileID: 1067257845}
   - 65: {fileID: 1067257844}
   - 23: {fileID: 1067257843}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3290,7 +3290,7 @@ Transform:
   m_LocalScale: {x: 3, y: 1, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 53
+  m_RootOrder: 55
 --- !u!1 &1090611218
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,7 +3301,7 @@ GameObject:
   - 4: {fileID: 1090611219}
   - 33: {fileID: 1090611221}
   - 23: {fileID: 1090611220}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3748,7 +3748,7 @@ GameObject:
   - 33: {fileID: 1219805958}
   - 65: {fileID: 1219805957}
   - 23: {fileID: 1219805956}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3987,8 +3987,8 @@ GameObject:
   - 33: {fileID: 1314402549}
   - 65: {fileID: 1314402548}
   - 23: {fileID: 1314402547}
-  m_Layer: 0
-  m_Name: Ground
+  m_Layer: 11
+  m_Name: Goal Ceiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4128,7 +4128,7 @@ GameObject:
   - 65: {fileID: 1315666958}
   m_Layer: 2
   m_Name: Goal
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4310,7 +4310,7 @@ GameObject:
   - 4: {fileID: 1326695612}
   - 33: {fileID: 1326695614}
   - 23: {fileID: 1326695613}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4587,7 +4587,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
 --- !u!1 &1388113944
 GameObject:
   m_ObjectHideFlags: 0
@@ -4742,7 +4742,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
 --- !u!1 &1397485763
 GameObject:
   m_ObjectHideFlags: 0
@@ -4921,7 +4921,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 4f009e560cb40134ba29416e9bfd0c32, type: 2}
       propertyPath: m_LocalScale.x
@@ -5918,7 +5918,7 @@ GameObject:
   - 4: {fileID: 1706369158}
   - 33: {fileID: 1706369160}
   - 23: {fileID: 1706369159}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6125,7 +6125,7 @@ Transform:
   - {fileID: 1090611219}
   - {fileID: 2114531348}
   m_Father: {fileID: 0}
-  m_RootOrder: 54
+  m_RootOrder: 53
 --- !u!114 &1746272363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7123,7 +7123,7 @@ GameObject:
   - 4: {fileID: 2114531348}
   - 33: {fileID: 2114531350}
   - 23: {fileID: 2114531349}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7293,6 +7293,8 @@ MonoBehaviour:
   marker: {fileID: 100000, guid: c3abe0c7ab9d5e04887e3ee3c41e31da, type: 2}
   teleportArriveEffect: {fileID: 100000, guid: 91db3bfe7b6fe124db78ea7c5857e71e, type: 2}
   teleportHaloEffect: {fileID: 100000, guid: 20278a8b826139d498a549556974e131, type: 2}
+  mapCameraPrefab: {fileID: 100000, guid: 5a73ad5a85f6017418bbce3a24037d4a, type: 2}
+  goalMapMarkerPrefab: {fileID: 100000, guid: 34414b3e6c11165468ca301bf1945ba1, type: 2}
 --- !u!54 &2128359083
 Rigidbody:
   m_ObjectHideFlags: 0
