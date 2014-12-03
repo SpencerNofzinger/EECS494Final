@@ -16,6 +16,7 @@ public class MovingPlatformSwitch : MonoBehaviour {
 			{
 				WallList[i].GetComponent<LoopingMovingPlatform>().switchOn();
 			}
+			audio.Play();
 		}
 	}
 }

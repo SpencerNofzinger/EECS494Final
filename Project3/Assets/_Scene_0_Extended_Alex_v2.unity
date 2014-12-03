@@ -1739,7 +1739,7 @@ GameObject:
   - 4: {fileID: 769067298}
   - 33: {fileID: 769067301}
   - 23: {fileID: 769067299}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1893,7 +1893,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4a9d7cdb304cd934bb2c060e806822a4, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a9d7cdb304cd934bb2c060e806822a4, type: 2}
@@ -2684,7 +2684,7 @@ GameObject:
   - 4: {fileID: 1439061144}
   - 33: {fileID: 1439061146}
   - 23: {fileID: 1439061145}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3012,7 +3012,7 @@ GameObject:
   - 4: {fileID: 1632418409}
   - 33: {fileID: 1632418412}
   - 23: {fileID: 1632418410}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3120,6 +3120,7 @@ GameObject:
   - 65: {fileID: 1716095100}
   - 23: {fileID: 1716095099}
   - 114: {fileID: 1716095098}
+  - 82: {fileID: 1716095103}
   m_Layer: 2
   m_Name: DoorSwitchRed
   m_TagString: Untagged
@@ -3194,6 +3195,65 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!82 &1716095103
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 4a9d7cdb304cd934bb2c060e806822a4,
+    type: 2}
+  m_PrefabInternal: {fileID: 907318321}
+  m_GameObject: {fileID: 1716095097}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 9fb4f48fda2528444bb6b2ad8033e90f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1759187192
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,7 +3333,7 @@ GameObject:
   - 4: {fileID: 1780116542}
   - 33: {fileID: 1780116544}
   - 23: {fileID: 1780116543}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,6 +22,7 @@ public class BridgeSwitch : MonoBehaviour {
 			{
 				BridgeList[i].GetComponent<Bridge>().vertical = !BridgeList[i].GetComponent<Bridge>().vertical;
 			}
+			audio.Play();
 		}
 	}
 }

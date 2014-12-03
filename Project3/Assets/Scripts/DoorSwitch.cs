@@ -23,6 +23,7 @@ public class DoorSwitch : MonoBehaviour {
 			{
 				DoorList[i].GetComponent<Door>().open = !DoorList[i].GetComponent<Door>().open;
 			}
+			audio.Play();
 		}
 	}
 }
