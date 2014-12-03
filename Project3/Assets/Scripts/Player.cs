@@ -19,6 +19,8 @@ public class Player : MonoBehaviour {
 	private bool isRotating;	// Is the camera being rotated?
 	private float turnSpeed = 4.0f;
 	private Vector3 defaultCameraPosition;
+
+	private int cameraZoomState = 0;
 	
 	// Camera transition variables
 	private bool isTeleporting;
@@ -125,7 +127,7 @@ public class Player : MonoBehaviour {
 			
 			cameraToPlayer = new Ray (referencePosition, Camera.main.transform.position - transform.position);
 			
-			hits = Physics.RaycastAll (cameraToPlayer, 7.0f, layerMask);
+			hits = Physics.RaycastAll (cameraToPlayer, Vector3.Distance(referencePosition, Camera.main.transform.position), layerMask);
 			
 			for (int i = 0; i < hits.Length; ++i) {
 				RaycastHit hit = hits [i];
@@ -175,6 +177,22 @@ public class Player : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Tab)) {
 			mapFunction (mapIsOpen);
+		}
+		if (Input.GetAxis ("Mouse ScrollWheel") < 0 && cameraZoomState >= -3) {
+			Ray cameraAngle = new Ray (transform.position, Camera.main.transform.position - transform.position);
+			Vector3 zoomTick = cameraAngle.direction;
+			Vector3 tempPos = Camera.main.transform.position;
+			tempPos += zoomTick;
+			cameraZoomState -= 1;
+			Camera.main.transform.position = tempPos;
+		}
+		if (Input.GetAxis ("Mouse ScrollWheel") > 0 && cameraZoomState <= 3) {
+			Ray cameraAngle = new Ray (transform.position, Camera.main.transform.position - transform.position);
+			Vector3 zoomTick = cameraAngle.direction;
+			Vector3 tempPos = Camera.main.transform.position;
+			tempPos -= zoomTick;
+			cameraZoomState += 1;
+			Camera.main.transform.position = tempPos;
 		}
 
 		// Rotate player based on mouse

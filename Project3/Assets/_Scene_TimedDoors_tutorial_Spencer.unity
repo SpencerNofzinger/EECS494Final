@@ -717,6 +717,8 @@ MonoBehaviour:
   marker: {fileID: 100000, guid: c3abe0c7ab9d5e04887e3ee3c41e31da, type: 2}
   teleportArriveEffect: {fileID: 100000, guid: 91db3bfe7b6fe124db78ea7c5857e71e, type: 2}
   teleportHaloEffect: {fileID: 100000, guid: 20278a8b826139d498a549556974e131, type: 2}
+  mapCameraPrefab: {fileID: 100000, guid: 5a73ad5a85f6017418bbce3a24037d4a, type: 2}
+  goalMapMarkerPrefab: {fileID: 100000, guid: 34414b3e6c11165468ca301bf1945ba1, type: 2}
 --- !u!54 &216300201
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -785,7 +787,7 @@ GameObject:
   - 4: {fileID: 219651275}
   - 33: {fileID: 219651277}
   - 23: {fileID: 219651276}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +935,7 @@ GameObject:
   - 33: {fileID: 224042020}
   - 65: {fileID: 224042019}
   - 23: {fileID: 224042018}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1032,7 +1034,7 @@ GameObject:
   - 4: {fileID: 232631819}
   - 33: {fileID: 232631821}
   - 23: {fileID: 232631820}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3033,7 +3035,7 @@ GameObject:
   - 65: {fileID: 714302187}
   m_Layer: 2
   m_Name: Goal
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4489,7 +4491,7 @@ GameObject:
   - 33: {fileID: 1120365208}
   - 65: {fileID: 1120365207}
   - 23: {fileID: 1120365206}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4754,7 +4756,7 @@ GameObject:
   - 33: {fileID: 1297270146}
   - 65: {fileID: 1297270145}
   - 23: {fileID: 1297270144}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6038,7 +6040,7 @@ GameObject:
   - 4: {fileID: 1539388183}
   - 33: {fileID: 1539388182}
   - 23: {fileID: 1539388181}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7814,7 +7816,7 @@ GameObject:
   - 4: {fileID: 2057657129}
   - 33: {fileID: 2057657131}
   - 23: {fileID: 2057657130}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door_SideBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
