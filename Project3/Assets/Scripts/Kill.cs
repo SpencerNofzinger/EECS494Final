@@ -8,5 +8,11 @@ public class Kill : MonoBehaviour {
 		{
 			col.GetComponent<Player>().reload ();
 		}
+		if(col.gameObject.CompareTag ("Marker"))
+		{
+			Destroy(col.gameObject);
+			GameObject player = GameObject.FindGameObjectWithTag("Player");
+			player.GetComponent<Player>().MarkerDestroyed();
+		}
 	}
 }

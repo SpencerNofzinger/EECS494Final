@@ -63,7 +63,7 @@ public class Player : MonoBehaviour {
 				isTeleporting = false;
 				inputEnabled = true;
 				transform.position = prevLoc.transform.position;
-				rigidbody.velocity = Vector3.zero;
+				//rigidbody.velocity = Vector3.zero;
 				Instantiate (teleportArriveEffect, transform.position, Quaternion.identity);
 				renderer.enabled = true;
 				collider.enabled = true;
@@ -248,6 +248,11 @@ public class Player : MonoBehaviour {
 			}
 		}
 	}
+	public void MarkerDestroyed()
+	{
+		set = false;
+	}
+
 	
 	void OnCollisionEnter (Collision hit) { 
 		if(hit.gameObject.CompareTag ("MovingPlatform"))
