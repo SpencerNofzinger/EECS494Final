@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class Player2 : MonoBehaviour {
 	
 	
 	private Vector3 curLoc;
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
 	private bool isRotating;	// Is the camera being rotated?
 	private float turnSpeed = 4.0f;
 	private Vector3 defaultCameraPosition;
-
+	
 	private int cameraZoomState = 0;
 	
 	// Camera transition variables
@@ -30,19 +30,23 @@ public class Player : MonoBehaviour {
 	private float maxWarpTime = 0.8f;
 	
 	private bool inputEnabled = true;
-
+	
 	// Map variables
 	private bool mapIsOpen = false;
 	public GameObject mapCameraPrefab;
 	GameObject mapCamera;
 	private GameObject goalMapMarker;
 	public GameObject goalMapMarkerPrefab;
-
-
+	
+	// 'Animation' variables
+	public GameObject body;
+	ShoddyAnimator bodyScript;
+	
 	void Awake(){
 		defaultCameraPosition = Camera.main.transform.localPosition;
 		Screen.showCursor = false;
 		Screen.lockCursor = true;
+		bodyScript = body.GetComponent<ShoddyAnimator> ();
 	}
 	void Update () 
 	{
@@ -73,33 +77,34 @@ public class Player : MonoBehaviour {
 				prevLoc = null;
 				Destroy (HaloEffectObject);
 				HaloEffectObject = null;
+				bodyScript.reappear ();
 			}
 			
 		}
-
-
+		
+		
 	}
 	
 	private void mapFunction(bool IsOpen){
-				if (!IsOpen) {
-						mapCamera = Instantiate (mapCameraPrefab) as GameObject;
-						GameObject goal = GameObject.FindWithTag("Goal");
-						Vector3 goalPosition = goal.transform.position;
-						goalMapMarker = Instantiate (goalMapMarkerPrefab) as GameObject;
-						goalMapMarker.transform.position = goal.transform.position;
-						mapIsOpen = true;
+		if (!IsOpen) {
+			mapCamera = Instantiate (mapCameraPrefab) as GameObject;
+			GameObject goal = GameObject.FindWithTag("Goal");
+			Vector3 goalPosition = goal.transform.position;
+			goalMapMarker = Instantiate (goalMapMarkerPrefab) as GameObject;
+			goalMapMarker.transform.position = goal.transform.position;
+			mapIsOpen = true;
 			//inputEnabled = false;
-				}
-				else if (IsOpen) {
-						Destroy (mapCamera);
-						mapCamera = null;
-						Destroy (goalMapMarker);
-						goalMapMarker = null;
-						mapIsOpen = false;
-			//inputEnabled = true;
-				}
-				
 		}
+		else if (IsOpen) {
+			Destroy (mapCamera);
+			mapCamera = null;
+			Destroy (goalMapMarker);
+			goalMapMarker = null;
+			mapIsOpen = false;
+			//inputEnabled = true;
+		}
+		
+	}
 	private void CameraCheck(){
 		RaycastHit[] hits;
 		int layerMask = 1 << 8;
@@ -143,8 +148,8 @@ public class Player : MonoBehaviour {
 			}
 		}
 	}
-
-
+	
+	
 	
 	private void InputListen() {
 		curLoc = transform.position;
@@ -154,18 +159,22 @@ public class Player : MonoBehaviour {
 		if(Input.GetKey(KeyCode.A))
 		{
 			velocity += Vector3.Cross (transform.forward, Vector3.up) * moveSpeed;
+			bodyScript.startLeft ();
 		}
 		if(Input.GetKey(KeyCode.D))
 		{
 			velocity += Vector3.Cross (transform.forward, Vector3.up) * -moveSpeed;
+			bodyScript.startRight();
 		}
 		if(Input.GetKey(KeyCode.W))
 		{
 			velocity += transform.forward * moveSpeed;
+			bodyScript.startForward ();
 		}
 		if(Input.GetKey(KeyCode.S))
 		{
 			velocity += transform.forward * -moveSpeed;
+			bodyScript.startForward ();
 		}
 		if(Input.GetKey (KeyCode.Escape))
 		{
@@ -174,6 +183,11 @@ public class Player : MonoBehaviour {
 		if(Input.GetKey(KeyCode.P))
 		{
 			Screen.lockCursor = !Screen.lockCursor;
+		}
+
+		if(velocity.x == 0 && velocity.z == 0)
+		{
+			bodyScript.startIdle();
 		}
 
 		if (Input.GetKeyDown (KeyCode.Tab)) {
@@ -195,7 +209,7 @@ public class Player : MonoBehaviour {
 			cameraZoomState += 1;
 			Camera.main.transform.position = tempPos;
 		}
-
+		
 		// Rotate player based on mouse
 		transform.Rotate(Vector3.up * rotateSpeed * Input.GetAxis ("Mouse X"));
 		
@@ -246,6 +260,7 @@ public class Player : MonoBehaviour {
 				HaloEffectObject = Instantiate(teleportHaloEffect, curLoc, Quaternion.identity) as GameObject;
 				//HaloEffectObject.transform.parent = transform;
 				prevLoc.GetComponent<Marker>().setInvis();
+				bodyScript.disappear ();
 			}
 		}
 	}
@@ -253,7 +268,7 @@ public class Player : MonoBehaviour {
 	{
 		set = false;
 	}
-
+	
 	
 	void OnCollisionEnter (Collision hit) { 
 		if(hit.gameObject.CompareTag ("MovingPlatform"))
