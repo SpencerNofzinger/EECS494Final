@@ -67,8 +67,13 @@
      <Compile Include="Assets\Scripts\MovingPlatformSwitch.cs" />
      <Compile Include="Assets\Scripts\OnClick.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+<<<<<<< HEAD
+     <Compile Include="Assets\Scripts\Player2.cs" />
+=======
      <Compile Include="Assets\Scripts\RedBridgeSwitch.cs" />
+>>>>>>> origin/master
      <Compile Include="Assets\Scripts\RotateForever.cs" />
+     <Compile Include="Assets\Scripts\ShoddyAnimator.cs" />
      <Compile Include="Assets\Scripts\Spawn.cs" />
      <Compile Include="Assets\Scripts\Stage_Select.cs" />
      <Compile Include="Assets\Scripts\TeleportArriveParticle.cs" />
