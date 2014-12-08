@@ -1,5 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MiniMapCamera.cs">
     <Files>
       <File FileName="Assets\Scripts\AddTransparency.cs" Line="9" Column="35" />
@@ -9,6 +10,13 @@
       <File FileName="Assets\Scripts\InstructionList.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player2.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MiniMapBorder.cs" Line="10" Column="77" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Stage_Select.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Stage_Select.cs" Line="50" Column="1" />
+      <File FileName="Assets\Scripts\Stage_Select.cs" Line="43" Column="71" />
+      <File FileName="Assets\Scripts\Main_Menu.cs" Line="6" Column="14" />
+>>>>>>> origin/master
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -302,5 +302,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ac99a235dc5d3468646c9f34d7983a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  first_scene: _Scene_0_Extended_Alex_v2
-  scene_select: _Scene_Select
+  first_scene: 0
+  scene_select: _Stage_Select

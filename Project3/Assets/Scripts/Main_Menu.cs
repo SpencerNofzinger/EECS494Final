@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Main_Menu : MonoBehaviour {
 //	public Texture btnTexture;
-	public string first_scene;
+ 	public int first_scene;
 	public string scene_select;
 	float mid_width;
 	float mid_height;
