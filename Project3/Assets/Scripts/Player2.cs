@@ -52,6 +52,9 @@ public class Player2 : MonoBehaviour {
 	{
 		
 		CameraCheck ();
+		if (Input.GetKeyDown (KeyCode.Tab)) {
+			mapFunction (mapIsOpen);
+		}
 		if (inputEnabled) {
 			InputListen ();
 			Poof ();
@@ -93,7 +96,7 @@ public class Player2 : MonoBehaviour {
 			goalMapMarker = Instantiate (goalMapMarkerPrefab) as GameObject;
 			goalMapMarker.transform.position = goal.transform.position;
 			mapIsOpen = true;
-			//inputEnabled = false;
+			inputEnabled = false;
 		}
 		else if (IsOpen) {
 			Destroy (mapCamera);
@@ -101,7 +104,7 @@ public class Player2 : MonoBehaviour {
 			Destroy (goalMapMarker);
 			goalMapMarker = null;
 			mapIsOpen = false;
-			//inputEnabled = true;
+			inputEnabled = true;
 		}
 		
 	}
@@ -190,9 +193,7 @@ public class Player2 : MonoBehaviour {
 			bodyScript.startIdle();
 		}
 
-		if (Input.GetKeyDown (KeyCode.Tab)) {
-			mapFunction (mapIsOpen);
-		}
+
 		if (Input.GetAxis ("Mouse ScrollWheel") < 0 && cameraZoomState >= -3) {
 			Ray cameraAngle = new Ray (transform.position, Camera.main.transform.position - transform.position);
 			Vector3 zoomTick = cameraAngle.direction;

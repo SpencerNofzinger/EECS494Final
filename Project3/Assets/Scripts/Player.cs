@@ -83,18 +83,18 @@ public class Player : MonoBehaviour {
 	private void mapFunction(bool IsOpen){
 				if (!IsOpen) {
 						mapCamera = Instantiate (mapCameraPrefab) as GameObject;
-						GameObject goal = GameObject.FindWithTag("Goal");
-						Vector3 goalPosition = goal.transform.position;
-						goalMapMarker = Instantiate (goalMapMarkerPrefab) as GameObject;
-						goalMapMarker.transform.position = goal.transform.position;
+			GameObject goal = GameObject.FindWithTag("Goal");
+			Vector3 goalPosition = goal.transform.position;
+			goalMapMarker = Instantiate (goalMapMarkerPrefab) as GameObject;
+			goalMapMarker.transform.position = goal.transform.position;
 						mapIsOpen = true;
 			//inputEnabled = false;
 				}
 				else if (IsOpen) {
 						Destroy (mapCamera);
 						mapCamera = null;
-						Destroy (goalMapMarker);
-						goalMapMarker = null;
+			Destroy (goalMapMarker);
+			goalMapMarker = null;
 						mapIsOpen = false;
 			//inputEnabled = true;
 				}
