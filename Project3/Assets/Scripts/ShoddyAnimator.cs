@@ -31,10 +31,10 @@ public class ShoddyAnimator : MonoBehaviour {
 	void Start()
 	{
 		mov = Movement.IDLE;
-		laq = leftarm.transform.rotation;
-		raq = rightarm.transform.rotation;
-		llq = leftleg.transform.rotation;
-		rlq = rightleg.transform.rotation;
+		laq = leftarm.transform.localRotation;
+		raq = rightarm.transform.localRotation;
+		llq = leftleg.transform.localRotation;
+		rlq = rightleg.transform.localRotation;
 	}
 
 	// Update is called once per frame
