@@ -1287,6 +1287,110 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_Normal.m_TextColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_Normal.m_TextColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_Normal.m_TextColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_Normal.m_Background
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_OnActive.m_TextColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_OnActive.m_TextColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_OnActive.m_TextColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_OnHover.m_TextColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_OnHover.m_TextColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_OnHover.m_TextColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_OnNormal.m_TextColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_OnNormal.m_TextColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_OnNormal.m_TextColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_OnFocused.m_TextColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_OnFocused.m_TextColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_OnFocused.m_TextColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_FontSize
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_Active.m_TextColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_Active.m_TextColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_Active.m_TextColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_Focused.m_TextColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_Focused.m_TextColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_Focused.m_TextColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_Hover.m_TextColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_Hover.m_TextColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
+      propertyPath: guiStyle.m_Hover.m_TextColor.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d59caaab5878b144c80d678e752f294d, type: 2}
   m_RootGameObject: {fileID: 493797799}
