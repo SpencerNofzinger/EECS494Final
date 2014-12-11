@@ -39,7 +39,7 @@ public class InstructionList : MonoBehaviour {
 		guiStyle = new GUIStyle(GUI.skin.button);
 		guiStyle.fontSize = 24;
 		if(showGUI) {
-			int width = 600, height = 100;	
+			int width = 500, height = 100;	
 			//GUI.Box(new Rect((Screen.width - width)/2, Screen.height/4 - height, width, height), list[inUse].text);
 			GUI.Box(new Rect((Screen.width - width)/2, Screen.height/4 - height, width, height), list[inUse].text, guiStyle);
 		}

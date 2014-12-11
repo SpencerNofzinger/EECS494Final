@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Player2 : MonoBehaviour {
 	
-	
+	GUIStyle guiStyle;
+
 	private Vector3 curLoc;
 	private GameObject prevLoc;
 	public float moveSpeed = 2;
@@ -294,5 +295,16 @@ public class Player2 : MonoBehaviour {
 	public void reload()
 	{
 		Application.LoadLevel (Application.loadedLevel);
+	}
+
+
+	void OnGUI() {
+		guiStyle = new GUIStyle(GUI.skin.button);
+		guiStyle.fontSize = 12;
+
+			int width = 200, height = 50;	
+			//GUI.Box(new Rect((Screen.width - width)/2, Screen.height/4 - height, width, height), list[inUse].text);
+		GUI.Box(new Rect((Screen.width - width), 220, width, height), "Left click: return to marker \n Right click: set marker", guiStyle);
+
 	}
 }
