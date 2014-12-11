@@ -258,7 +258,7 @@ GUIText:
   m_GameObject: {fileID: 71206369}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: Press WASD to move around.
+  m_Text: "Press WASD to move around.\r\nMove the mouse to look around."
   m_Anchor: 0
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
@@ -2275,7 +2275,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13200000, guid: 54942e0728eb9ea40ac4c41be74ba754, type: 2}
       propertyPath: m_Text
-      value: Press WASD to move around.
+      value: "Press WASD to move around.\r\nMove the mouse to look around."
       objectReference: {fileID: 0}
     - target: {fileID: 13200000, guid: 54942e0728eb9ea40ac4c41be74ba754, type: 2}
       propertyPath: m_Anchor
