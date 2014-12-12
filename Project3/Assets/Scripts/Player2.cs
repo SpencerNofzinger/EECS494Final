@@ -251,6 +251,8 @@ public class Player2 : MonoBehaviour {
 			prevLoc = Instantiate(marker, curLoc, Quaternion.identity) as GameObject;
 			prevLoc.transform.parent = transform.parent;
 			set = true;
+			audio.clip = Resources.Load ("Bloops_01") as AudioClip;
+			audio.Play ();
 		}
 		if(Input.GetKeyUp(KeyCode.Mouse0)) {
 			if(set) {
@@ -263,6 +265,9 @@ public class Player2 : MonoBehaviour {
 				//HaloEffectObject.transform.parent = transform;
 				prevLoc.GetComponent<Marker>().setInvis();
 				bodyScript.disappear ();
+
+				audio.clip = Resources.Load ("Blips_14") as AudioClip;
+				audio.Play ();
 			}
 		}
 	}
