@@ -1,14 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Stage_Select.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Main_Menu.cs">
     <Files>
+      <File FileName="Assets\Scripts\Player2.cs" Line="189" Column="43" />
       <File FileName="Assets\Credits.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player2.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\InstructionList.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ShoddyAnimator.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Kill.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Stage_Select.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Win.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Main_Menu.cs" Line="19" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
