@@ -12,7 +12,7 @@ public class Kill : MonoBehaviour {
 		{
 			Destroy(col.gameObject);
 			GameObject player = GameObject.FindGameObjectWithTag("Player");
-			player.GetComponent<Player>().MarkerDestroyed();
+			player.GetComponent<Player2>().MarkerDestroyed();
 		}
 	}
 }
