@@ -15,6 +15,8 @@ public class Main_Menu : MonoBehaviour {
 	void Start () {
 		mid_width = Screen.width / 2;
 		mid_height = Screen.height / 2;
+		Screen.lockCursor = false;
+		Screen.showCursor = true;
 	}
 
 	void OnGUI () {

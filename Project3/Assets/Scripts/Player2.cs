@@ -188,7 +188,10 @@ public class Player2 : MonoBehaviour {
 		{
 			Screen.lockCursor = !Screen.lockCursor;
 		}
-
+		if(Input.GetKey (KeyCode.Backspace))
+		{
+			Application.LoadLevel ("_Main_Menu");
+		}
 		if(velocity.x == 0 && velocity.z == 0)
 		{
 			bodyScript.startIdle();
