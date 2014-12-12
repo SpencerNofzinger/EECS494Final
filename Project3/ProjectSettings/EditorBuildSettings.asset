@@ -6,13 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Main_Menu.unity
+  - enabled: 1
     path: Assets/_Scene_0_Extended_Alex_v2.unity
   - enabled: 1
     path: Assets/_Scene_1_Extended_Patrick.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scene_4_Spencer.unity
   - enabled: 1
+    path: Assets/_Scene_4_Alex.unity
+  - enabled: 0
     path: Assets/_Scene_2_Kyle.unity
+  - enabled: 1
+    path: Assets/_Scene_2_Alex.unity
+  - enabled: 1
+    path: Assets/_Scene_ColoredRotatingBridges_Kyle.unity
   - enabled: 1
     path: Assets/_Scene_Glass_Spencer.unity
   - enabled: 1
@@ -24,4 +32,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Stage_Select.unity
   - enabled: 1
-    path: Assets/_Main_Menu.unity
+    path: Assets/_Scene_Credits.unity
