@@ -40,7 +40,7 @@ public class Stage_Select : MonoBehaviour {
 					content = new GUIContent ("Level " + (level + 1), btnTexture[level]);
 				}
 
-				if (GUI.Button(new Rect((width - total_width) / 0.5f + button_width / 2 + j * (button_width * 1.5f),
+				if (GUI.Button(new Rect((width - total_width) / 2.0f + button_width / 2 + j * (button_width * 1.5f) + 150.0f,
 				                        height / 2 - button_height / 2 + i * (button_height * 1.2f),
 				                        button_width,
 				                        button_height), 

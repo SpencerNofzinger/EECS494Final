@@ -30,6 +30,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene_TimedDoorsLevel.unity
   - enabled: 1
-    path: Assets/_Stage_Select.unity
-  - enabled: 1
     path: Assets/_Scene_Credits.unity
+  - enabled: 1
+    path: Assets/_Stage_Select.unity

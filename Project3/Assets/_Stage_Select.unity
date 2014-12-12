@@ -175,12 +175,14 @@ MonoBehaviour:
   - {fileID: 2800000, guid: af06a65d4b7d3d94f9f9e73f6ba221d8, type: 3}
   - {fileID: 2800000, guid: fbf0149e42bb8184fb4cdcddf71cc9d3, type: 3}
   - {fileID: 2800000, guid: 454f38e807a05584f947f7178184d916, type: 3}
+  - {fileID: 2800000, guid: 5acd4ae05c386bd4ea7c2c58b0f26cd1, type: 3}
   - {fileID: 2800000, guid: 55190bb1efbd54445915aec6f4477420, type: 3}
   - {fileID: 2800000, guid: baf1139f3f10d4142b04791e84c8aba1, type: 3}
   - {fileID: 2800000, guid: 2ba6953d55460d440bbca88bebf25bec, type: 3}
-  - {fileID: 2800000, guid: d40dfddc7ce385f4f8299adcb021b450, type: 3}
-  stage_select: 0000000000000000000000000000000000000000000000000000000000000000
-  num_stage: 8
+  - {fileID: 2800000, guid: f9c18b6fb212a8446bc735ffc1ef2927, type: 3}
+  - {fileID: 2800000, guid: d7bfedbf7e59ebe4890a9181aa62adae, type: 3}
+  stage_select: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  num_stage: 10
   main_menu: _Main_Menu
 --- !u!1 &763147909
 GameObject:
